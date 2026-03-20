@@ -3,6 +3,7 @@ name: Build OrientationPFIEV
 on:
   push:
     branches: [ main ]
+    tags: [ 'v*' ]
   workflow_dispatch:
 
 jobs:
@@ -36,3 +37,21 @@ jobs:
           name: OrientationPFIEV-win-x86
           path: ./publish/OrientationPFIEV.exe
           retention-days: 30
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./publish/OrientationPFIEV.exe
+          name: OrientationPFIEV ${{ github.ref_name }}
+          body: |
+            ## OrientationPFIEV ${{ github.ref_name }}
+
+            Ứng dụng phân bổ thí sinh PFIEV — C# .NET 9 WinForms (win-x86, self-contained).
+
+            ### Cài đặt
+            Tải `OrientationPFIEV.exe` và chạy trực tiếp, không cần cài .NET runtime.
+
+            ### Yêu cầu
+            - Windows (32-bit hoặc 64-bit)
+            - Microsoft Access Database Engine 2010 (32-bit) nếu dùng cơ sở dữ liệu .mdb
