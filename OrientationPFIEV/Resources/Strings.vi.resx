@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- Application -->
+  <data name="AppTitle" xml:space="preserve"><value>Phần mềm phân bổ chuyên ngành PFIEV</value></data>
+
+  <!-- Buttons -->
+  <data name="BtnOk" xml:space="preserve"><value>OK</value></data>
+  <data name="BtnCancel" xml:space="preserve"><value>Hủy</value></data>
+  <data name="BtnQuit" xml:space="preserve"><value>Thoát</value></data>
+  <data name="BtnAdd" xml:space="preserve"><value>Thêm</value></data>
+  <data name="BtnModify" xml:space="preserve"><value>Sửa</value></data>
+  <data name="BtnDelete" xml:space="preserve"><value>Xóa</value></data>
+  <data name="BtnSave" xml:space="preserve"><value>Lưu</value></data>
+  <data name="BtnClose" xml:space="preserve"><value>Đóng</value></data>
+  <data name="BtnImport" xml:space="preserve"><value>Nhập từ Excel</value></data>
+  <data name="BtnExport" xml:space="preserve"><value>Xuất ra Excel</value></data>
+  <data name="BtnProcess" xml:space="preserve"><value>Chạy phân bổ</value></data>
+  <data name="BtnResults" xml:space="preserve"><value>Xem kết quả cũ</value></data>
+  <data name="BtnClearHistory" xml:space="preserve"><value>Xóa lịch sử</value></data>
+
+  <!-- Labels -->
+  <data name="LblYear" xml:space="preserve"><value>Năm</value></data>
+  <data name="LblMinScore" xml:space="preserve"><value>Điểm TB tối thiểu</value></data>
+  <data name="LblName" xml:space="preserve"><value>Họ tên</value></data>
+  <data name="LblCode" xml:space="preserve"><value>Mã</value></data>
+  <data name="LblCity" xml:space="preserve"><value>Thành phố</value></data>
+  <data name="LblCoeff" xml:space="preserve"><value>Hệ số</value></data>
+  <data name="LblSlots" xml:space="preserve"><value>Số chỗ</value></data>
+  <data name="LblStatus" xml:space="preserve"><value>Trạng thái</value></data>
+  <data name="LblLanguage" xml:space="preserve"><value>Ngôn ngữ</value></data>
+  <data name="LblSchool" xml:space="preserve"><value>Trường</value></data>
+  <data name="LblSex" xml:space="preserve"><value>Giới tính</value></data>
+  <data name="LblDOB" xml:space="preserve"><value>Ngày sinh</value></data>
+
+  <!-- Messages -->
+  <data name="MsgConfirmDelete" xml:space="preserve"><value>Bạn có chắc muốn xóa?</value></data>
+  <data name="MsgFieldRequired" xml:space="preserve"><value>Vui lòng điền đầy đủ các trường bắt buộc.</value></data>
+  <data name="MsgOnlyDigits" xml:space="preserve"><value>Chỉ được nhập chữ số trong trường này!</value></data>
+  <data name="MsgOnlyNumbers" xml:space="preserve"><value>Chỉ được nhập chữ số hoặc dấu '.'</value></data>
+  <data name="MsgInvalidPath" xml:space="preserve"><value>Đường dẫn cơ sở dữ liệu không hợp lệ hoặc không tồn tại.</value></data>
+  <data name="MsgConfirmClearHistory" xml:space="preserve"><value>Bạn có muốn xóa toàn bộ lịch sử session?</value></data>
+  <data name="MsgSelectFile" xml:space="preserve"><value>Vui lòng chọn file Excel.</value></data>
+  <data name="MsgImportDone" xml:space="preserve"><value>Nhập xong: {0} thí sinh đã nhập, {1} bỏ qua.</value></data>
+  <data name="MsgImportError" xml:space="preserve"><value>Lỗi khi nhập dữ liệu</value></data>
+  <data name="MsgXlsxOnly" xml:space="preserve"><value>Chỉ hỗ trợ file .xlsx (không hỗ trợ .xls).</value></data>
+  <data name="MsgExportDone" xml:space="preserve"><value>Xuất file thành công.</value></data>
+
+  <!-- Tabs -->
+  <data name="TabMatieres" xml:space="preserve"><value>Môn thi</value></data>
+  <data name="TabEtablissements" xml:space="preserve"><value>Trường</value></data>
+  <data name="TabFilieres" xml:space="preserve"><value>Ngành</value></data>
+
+  <!-- Launcher frame -->
+  <data name="FrameLaunch" xml:space="preserve"><value>Khởi động phần mềm</value></data>
+  <data name="OptParametrer" xml:space="preserve"><value>Cấu hình phần mềm</value></data>
+  <data name="OptNewSession" xml:space="preserve"><value>Tạo phiên mới</value></data>
+  <data name="OptExistingSession" xml:space="preserve"><value>Mở phiên có sẵn</value></data>
+
+  <!-- Dialogs -->
+  <data name="TitleSelectExcelFile" xml:space="preserve"><value>Chọn file Excel</value></data>
+
+  <!-- Grid columns -->
+  <data name="ColNom" xml:space="preserve"><value>Họ tên</value></data>
+  <data name="ColPrenom" xml:space="preserve"><value>Tên</value></data>
+  <data name="ColStatut" xml:space="preserve"><value>Trạng thái</value></data>
+  <data name="ColMoyenne" xml:space="preserve"><value>Điểm TB</value></data>
+  <data name="ColFiliere" xml:space="preserve"><value>Ngành</value></data>
+  <data name="ColClassement" xml:space="preserve"><value>Xếp hạng</value></data>
+  <data name="ColAnonymat" xml:space="preserve"><value>Số ẩn danh</value></data>
+  <data name="ColNombreChoix" xml:space="preserve"><value>Số ngành chọn</value></data>
+
+  <!-- Phase 05 - Session management -->
+  <data name="TitleParametrage" xml:space="preserve"><value>Quản lý thông số hệ thống</value></data>
+  <data name="TitleAjouterMatiere" xml:space="preserve"><value>Thêm môn thi</value></data>
+  <data name="TitleModifierMatiere" xml:space="preserve"><value>Sửa môn thi</value></data>
+  <data name="TitleAjouterEtab" xml:space="preserve"><value>Thêm trường</value></data>
+  <data name="TitleModifierEtab" xml:space="preserve"><value>Sửa trường</value></data>
+  <data name="TitleAjouterFiliere" xml:space="preserve"><value>Thêm ngành</value></data>
+  <data name="TitleModifierFiliere" xml:space="preserve"><value>Sửa ngành</value></data>
+  <data name="TitleFixerNbrePlace" xml:space="preserve"><value>Cài số chỗ</value></data>
+  <data name="TitleFixerNbFiliere" xml:space="preserve"><value>Cài số ngành</value></data>
+  <data name="LblNom" xml:space="preserve"><value>Họ tên</value></data>
+  <data name="LblCode" xml:space="preserve"><value>Mã</value></data>
+  <data name="LblVille" xml:space="preserve"><value>Thành phố</value></data>
+  <data name="LblNbPlace" xml:space="preserve"><value>Số chỗ</value></data>
+  <data name="LblEtablissement" xml:space="preserve"><value>Trường</value></data>
+  <data name="LblNbPlaceGlobal" xml:space="preserve"><value>Số chỗ chung</value></data>
+  <data name="LblMaxChoices" xml:space="preserve"><value>Số ngành tối đa</value></data>
+  <data name="BtnAjouter" xml:space="preserve"><value>Thêm</value></data>
+  <data name="BtnModifier" xml:space="preserve"><value>Sửa</value></data>
+  <data name="BtnEffacer" xml:space="preserve"><value>Xóa</value></data>
+  <data name="BtnFixerNbrePlaces" xml:space="preserve"><value>Đặt số chỗ chung</value></data>
+  <data name="MsgDeleteFkError" xml:space="preserve"><value>Không thể xóa: đang được sử dụng trong phiên.</value></data>
+  <data name="TitleSession" xml:space="preserve"><value>Thông tin phiên thi</value></data>
+  <data name="BtnFixerNotes" xml:space="preserve"><value>Nhập điểm</value></data>
+  <data name="BtnFixerChoix" xml:space="preserve"><value>Chọn ngành ưu tiên</value></data>
+  <data name="BtnParamConcours" xml:space="preserve"><value>Thông số kỳ thi</value></data>
+  <data name="BtnLancerTraitement" xml:space="preserve"><value>Chạy phân bổ</value></data>
+  <data name="BtnVisualiserResultats" xml:space="preserve"><value>Xem kết quả cũ</value></data>
+  <data name="BtnQuitterSession" xml:space="preserve"><value>Thoát phiên</value></data>
+  <data name="LblAnnee" xml:space="preserve"><value>Năm</value></data>
+  <data name="LblMoyMin" xml:space="preserve"><value>Điểm TB tối thiểu</value></data>
+  <data name="TitleOuvertureSE" xml:space="preserve"><value>Phiên mới</value></data>
+  <data name="BtnBrowse" xml:space="preserve"><value>...</value></data>
+  <data name="TitleNouvelleSession" xml:space="preserve"><value>Phiên mới</value></data>
+  <data name="TitleAjouterCandidat" xml:space="preserve"><value>Thêm/Sửa thí sinh</value></data>
+  <data name="TitleNoteMatiere" xml:space="preserve"><value>Điểm thí sinh</value></data>
+  <data name="TitleFixerChoix" xml:space="preserve"><value>Chọn ngành ưu tiên</value></data>
+  <data name="TitleParamConcours" xml:space="preserve"><value>Thông số kỳ thi</value></data>
+  <data name="TitleChangerSpe" xml:space="preserve"><value>Đổi ngành</value></data>
+  <data name="LblAvailableFilieres" xml:space="preserve"><value>Ngành có sẵn</value></data>
+  <data name="LblCandidateChoices" xml:space="preserve"><value>Ngành đã chọn</value></data>
+  <data name="BtnLancerSession" xml:space="preserve"><value>Bắt đầu phiên</value></data>
+  <data name="LblCoefficient" xml:space="preserve"><value>Hệ số</value></data>
+
+  <!-- Phase 07 - Excel import/export -->
+  <data name="TitleImport" xml:space="preserve"><value>Nhập dữ liệu từ Excel</value></data>
+  <data name="TitleExportExcel" xml:space="preserve"><value>Xuất dữ liệu ra Excel</value></data>
+  <data name="OptExportCandidats" xml:space="preserve"><value>Xuất danh sách thí sinh</value></data>
+  <data name="OptExportResultats" xml:space="preserve"><value>Xuất kết quả phân bổ</value></data>
+  <data name="BtnBrowseFile" xml:space="preserve"><value>Chọn file...</value></data>
+  <data name="MsgNoFileSelected" xml:space="preserve"><value>Vui lòng chọn file trước.</value></data>
+  <data name="MsgImportSuccess" xml:space="preserve"><value>Nhập thành công: {0} thí sinh, bỏ qua {1}.</value></data>
+  <data name="MsgExportSuccess" xml:space="preserve"><value>Xuất file thành công.</value></data>
+
+  <!-- Phase 06 - Results and statistics -->
+  <data name="TitleResultats" xml:space="preserve"><value>Kết quả xử lý dữ liệu</value></data>
+  <data name="TitleTableauRecap" xml:space="preserve"><value>Bảng tóm tắt</value></data>
+  <data name="TitleStat" xml:space="preserve"><value>Thống kê tổng quát</value></data>
+  <data name="TitleStat1" xml:space="preserve"><value>Thống kê theo ngôn ngữ</value></data>
+  <data name="TitleStat6" xml:space="preserve"><value>Top thí sinh theo ngành</value></data>
+  <data name="TitleStatEtab" xml:space="preserve"><value>Thống kê theo trường</value></data>
+  <data name="TitleStatMoyenne" xml:space="preserve"><value>Phân bố điểm TB</value></data>
+  <data name="TitleMoyenneSpe" xml:space="preserve"><value>Điểm TB theo ngành</value></data>
+  <data name="TitleGraphe" xml:space="preserve"><value>Biểu đồ kết quả</value></data>
+  <data name="BtnTableaux" xml:space="preserve"><value>Bảng và thống kê</value></data>
+  <data name="BtnRetour" xml:space="preserve"><value>Quay lại nhập liệu</value></data>
+  <data name="ColFiliereAdmis" xml:space="preserve"><value>Ngành được phân bổ</value></data>
+  <data name="ColMoyenneSpe" xml:space="preserve"><value>Điểm TB ngành</value></data>
+  <data name="ColNbAdmis" xml:space="preserve"><value>Số được nhận</value></data>
+  <data name="ColEtabFiliere" xml:space="preserve"><value>Trường (ngành)</value></data>
+
+</root>
