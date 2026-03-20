@@ -22,10 +22,6 @@
     <PackageReference Include="OxyPlot.WindowsForms" Version="2.*" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Strings.fr.resx" />
-    <EmbeddedResource Include="Resources\Strings.vi.resx" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\logo.jpg"       CopyToOutputDirectory="PreserveNewest" Condition="Exists('Resources\logo.jpg')" />
