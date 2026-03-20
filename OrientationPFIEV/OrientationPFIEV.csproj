@@ -31,13 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="..\..\Src\CONFIG.MDB" Condition="Exists('..\..\Src\CONFIG.MDB')">
+    <Content Include="Database\CONFIG.MDB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Link>CONFIG.MDB</Link>
     </Content>
-    <Content Include="..\..\Src\InitBase.mdb" Condition="Exists('..\..\Src\InitBase.mdb')">
+    <Content Include="Database\InitBase.mdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Link>InitBase.mdb</Link>
     </Content>
   </ItemGroup>
 

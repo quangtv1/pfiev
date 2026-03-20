@@ -33,18 +33,21 @@ jobs:
             -c Release `
             -o ./publish
 
+      - name: Package into ZIP
+        run: Compress-Archive -Path ./publish/* -DestinationPath ./OrientationPFIEV-win-x86.zip
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: OrientationPFIEV-win-x86
-          path: ./publish/OrientationPFIEV.exe
+          path: ./OrientationPFIEV-win-x86.zip
           retention-days: 30
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: ./publish/OrientationPFIEV.exe
+          files: ./OrientationPFIEV-win-x86.zip
           name: OrientationPFIEV ${{ github.ref_name }}
           body: |
             ## OrientationPFIEV ${{ github.ref_name }}
@@ -52,8 +55,9 @@ jobs:
             Ứng dụng phân bổ thí sinh PFIEV — C# .NET 9 WinForms (win-x86, self-contained).
 
             ### Cài đặt
-            Tải `OrientationPFIEV.exe` và chạy trực tiếp, không cần cài .NET runtime.
+            1. Giải nén `OrientationPFIEV-win-x86.zip`
+            2. Chạy `OrientationPFIEV.exe` — không cần cài .NET runtime
 
             ### Yêu cầu
-            - Windows (32-bit hoặc 64-bit)
-            - Microsoft Access Database Engine 2010 (32-bit) nếu dùng cơ sở dữ liệu .mdb
+            - Windows 10/11 (32-bit hoặc 64-bit)
+            - **[Bắt buộc]** [Microsoft Access Database Engine 2010 Redistributable (32-bit)](https://www.microsoft.com/en-us/download/details.aspx?id=13255)
