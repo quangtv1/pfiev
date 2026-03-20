@@ -48,7 +48,7 @@ public partial class FrmAccueil : Form
         {
             timer1.Stop();
             new FrmSelectLangue().Show();
-            Close();
+            Hide(); // Don't Close() — FrmAccueil is the Application.Run main form; closing it exits the app
         }
     }
 }

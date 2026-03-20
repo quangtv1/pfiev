@@ -12,6 +12,7 @@ public partial class FrmSession : Form
 {
     private readonly CandidatRepository _candidatRepo;
     private readonly ConcoursRepository _concoursRepo;
+    private bool _navigating = false;
 
     public FrmSession()
     {
@@ -186,8 +187,19 @@ public partial class FrmSession : Form
 
     private void btnQuitter_Click(object sender, EventArgs e)
     {
+        _navigating = true;
         SessionDatabase.Close();
         new FrmLancement().Show();
         Close();
+    }
+
+    protected override void OnFormClosed(FormClosedEventArgs e)
+    {
+        base.OnFormClosed(e);
+        if (!_navigating)
+        {
+            SessionDatabase.Close();
+            new FrmLancement().Show(); // X button: go back to launcher instead of hard-exit
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace OrientationPFIEV.Forms;
 public partial class FrmLancement : Form
 {
     private List<string> _recentPaths = new();
+    private bool _navigating = false; // true when transitioning to FrmSession (suppress Application.Exit)
 
     public FrmLancement()
     {
@@ -79,7 +80,10 @@ public partial class FrmLancement : Form
         {
             var dlg = new FrmOuvertureSE();
             if (dlg.ShowDialog(this) == DialogResult.OK)
+            {
+                _navigating = true;
                 Close();
+            }
         }
         else // Session existante
         {
@@ -93,6 +97,7 @@ public partial class FrmLancement : Form
             try
             {
                 SessionDatabase.Open(path);
+                _navigating = true;
                 new FrmSession().Show();
                 Close();
             }
@@ -128,4 +133,10 @@ public partial class FrmLancement : Form
     }
 
     private void btnQuitter_Click(object sender, EventArgs e) => Application.Exit();
+
+    protected override void OnFormClosed(FormClosedEventArgs e)
+    {
+        base.OnFormClosed(e);
+        if (!_navigating) Application.Exit(); // user closed window without navigating → quit
+    }
 }
