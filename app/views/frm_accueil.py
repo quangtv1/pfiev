@@ -47,7 +47,7 @@ class FrmAccueil(QWidget):
         if not pix.isNull():
             self._logo.setPixmap(pix.scaled(480, 295, Qt.KeepAspectRatio, Qt.SmoothTransformation))
         else:
-            self._logo.setText("OrientationPFIEV")
+            self._logo.setText("PhanBo-PFIEV")
             self._logo.setStyleSheet("font-size: 24px; font-weight: bold;")
             self._logo.setFixedHeight(295)
         layout.addWidget(self._logo)

@@ -13,7 +13,7 @@ def _res(name: str) -> str:
 class FrmSelectLangue(QDialog):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("OrientationPFIEV")
+        self.setWindowTitle("PhanBo-PFIEV")
         self.setFixedSize(320, 130)
         self._launcher = None
         self._setup_ui()

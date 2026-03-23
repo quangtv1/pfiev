@@ -1,4 +1,4 @@
-"""Create config.db and template.db SQLite databases for OrientationPFIEV."""
+"""Create config.db and template.db SQLite databases for PhanBo-PFIEV."""
 import sqlite3
 from pathlib import Path
 

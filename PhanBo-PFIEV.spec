@@ -68,7 +68,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='OrientationPFIEV',
+    name='PhanBo-PFIEV',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -89,5 +89,5 @@ coll = COLLECT(
     strip=False,
     upx=False,
     upx_exclude=[],
-    name='OrientationPFIEV',
+    name='PhanBo-PFIEV',
 )

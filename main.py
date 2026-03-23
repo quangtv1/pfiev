@@ -28,7 +28,7 @@ def _ensure_databases():
 
 def main():
     app = QApplication(sys.argv)
-    app.setApplicationName("OrientationPFIEV")
+    app.setApplicationName("PhanBo-PFIEV")
     app.setStyle("Fusion")
 
     L.set_language(AppState.language)
