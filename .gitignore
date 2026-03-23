@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.py[cod]
 *.pyo
@@ -7,21 +8,37 @@ build/
 dist/
 *.egg-info/
 *.spec.bak
+
+# Environment & secrets
 .env
 *.log
+
+# OS
 .DS_Store
 **/.DS_Store
+Thumbs.db
+
+# C# / .NET
 bin/
 obj/
 .vs/
 *.user
 *.suo
 *.userprefs
-Thumbs.db
+*.sln
+global.json
+OrientationPFIEV/
+
+# Data files (không commit dữ liệu thật)
 data/config.db
 data/*.mdb
-PN2026.mdb
+data/*.db
+
+# Temp / artifacts
+tmp/
+repomix-output.xml
 *.xlsx
-QA_TEST_RESULTS.md
+QA_TEST_*.md
+TEST_REPORT*.md
 TESTING_SUMMARY.txt
-TEST_REPORT.md
+DOCUMENTATION_SUMMARY.txt
