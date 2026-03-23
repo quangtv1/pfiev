@@ -11,6 +11,13 @@ dist/
 *.log
 .DS_Store
 **/.DS_Store
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+Thumbs.db
 data/config.db
 data/*.mdb
 PN2026.mdb

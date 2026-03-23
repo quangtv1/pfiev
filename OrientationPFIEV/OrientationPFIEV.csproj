@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <!-- Target Windows: net9.0-windows for WinForms support on the build machine -->
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <!-- UseWindowsForms requires Microsoft.NET.Sdk.WindowsDesktop (Windows-only SDK).
+         Set to true for Windows builds; on macOS CI this is omitted to allow restore. -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- x86 required for OleDb 32-bit Access ODBC driver -->
+    <PlatformTarget>x86</PlatformTarget>
+    <ApplicationIcon>Resources\iconPFEIV.ico</ApplicationIcon>
+    <AssemblyName>OrientationPFIEV</AssemblyName>
+    <RootNamespace>OrientationPFIEV</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.102.*" />
+    <PackageReference Include="System.Data.OleDb" Version="8.*" />
+    <PackageReference Include="OxyPlot.WindowsForms" Version="2.*" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Include="Resources\logo.jpg"       CopyToOutputDirectory="PreserveNewest" Condition="Exists('Resources\logo.jpg')" />
+    <Content Include="Resources\iconPFEIV.ico"  CopyToOutputDirectory="PreserveNewest" Condition="Exists('Resources\iconPFEIV.ico')" />
+    <Content Include="Resources\french.gif"     CopyToOutputDirectory="PreserveNewest" Condition="Exists('Resources\french.gif')" />
+    <Content Include="Resources\vietnam.gif"    CopyToOutputDirectory="PreserveNewest" Condition="Exists('Resources\vietnam.gif')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Database\CONFIG.MDB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database\InitBase.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
