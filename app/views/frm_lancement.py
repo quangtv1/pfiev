@@ -76,7 +76,7 @@ class FrmLancement(QMainWindow):
     def _on_browse_session(self):
         path, _ = QFileDialog.getOpenFileName(
             self, L.get("TitleSelectSession"), "",
-            "Session files (*.mdb *.db);;All files (*.*)"
+            "Session files (*.mdb *.db)"
         )
         if path:
             if self._combo_path.findText(path) < 0:

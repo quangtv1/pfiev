@@ -3,10 +3,7 @@ import matplotlib
 matplotlib.use('QtAgg')  # set backend before any other matplotlib import
 from pathlib import Path
 from PySide6.QtWidgets import QApplication
-from app.state import AppState
-from app.localization import L
 from app.database.config_db import ConfigDB
-from app.views.frm_lancement import FrmLancement
 
 
 def _ensure_databases():
@@ -31,16 +28,16 @@ def main():
     app.setApplicationName("PhanBo-PFIEV")
     app.setStyle("Fusion")
 
-    L.set_language(AppState.language)
-
     _ensure_databases()
 
     config_path = Path(__file__).parent / "data" / "config.db"
     if config_path.exists():
         ConfigDB.initialize(str(config_path))
 
-    launcher = FrmLancement()
-    launcher.show()
+    # Show splash screen → user picks language → launcher opens
+    from app.views.frm_accueil import FrmAccueil
+    splash = FrmAccueil()
+    splash.show()
     sys.exit(app.exec())
 
 

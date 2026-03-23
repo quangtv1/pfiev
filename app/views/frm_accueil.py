@@ -68,7 +68,7 @@ class FrmAccueil(QWidget):
         self._progress.setValue(self._tick)
         if self._tick >= self.MAX_TICKS:
             self._timer.stop()
-            from app.views.frm_lancement import FrmLancement
-            self._lang_dlg = FrmLancement()
+            from app.views.frm_select_langue import FrmSelectLangue
+            self._lang_dlg = FrmSelectLangue()
             self._lang_dlg.show()
             self.hide()  # NOT close() — closing main widget exits QApplication

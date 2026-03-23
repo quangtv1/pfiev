@@ -53,10 +53,12 @@ class FrmSession(QMainWindow):
         self._btn_edit = QPushButton()
         self._btn_del = QPushButton()
         self._btn_notes = QPushButton()
+        self._btn_notes_matiere = QPushButton()
         self._btn_choix = QPushButton()
         self._btn_param = QPushButton()
         for btn in [self._btn_add, self._btn_edit, self._btn_del,
-                    self._btn_notes, self._btn_choix, self._btn_param]:
+                    self._btn_notes, self._btn_notes_matiere,
+                    self._btn_choix, self._btn_param]:
             right.addWidget(btn)
         right.addStretch()
         main_layout.addLayout(right, stretch=1)
@@ -65,11 +67,12 @@ class FrmSession(QMainWindow):
         bottom_bar = QHBoxLayout()
         self._btn_import = QPushButton()
         self._btn_export = QPushButton()
+        self._btn_joindre = QPushButton()
         self._btn_lancer = QPushButton()
         self._btn_visualiser = QPushButton()
         self._btn_quitter = QPushButton()
-        for btn in [self._btn_import, self._btn_export, self._btn_lancer,
-                    self._btn_visualiser, self._btn_quitter]:
+        for btn in [self._btn_import, self._btn_export, self._btn_joindre,
+                    self._btn_lancer, self._btn_visualiser, self._btn_quitter]:
             bottom_bar.addWidget(btn)
 
         # Wrap bottom bar in left layout
@@ -80,10 +83,12 @@ class FrmSession(QMainWindow):
         self._btn_edit.clicked.connect(self._on_edit)
         self._btn_del.clicked.connect(self._on_delete)
         self._btn_notes.clicked.connect(self._on_notes)
+        self._btn_notes_matiere.clicked.connect(self._on_notes_par_matiere)
         self._btn_choix.clicked.connect(self._on_choix)
         self._btn_param.clicked.connect(self._on_param)
         self._btn_import.clicked.connect(self._on_import)
         self._btn_export.clicked.connect(self._on_export)
+        self._btn_joindre.clicked.connect(self._on_joindre)
         self._btn_lancer.clicked.connect(self._on_lancer)
         self._btn_visualiser.clicked.connect(self._on_visualiser)
         self._btn_quitter.clicked.connect(self._on_quitter)
@@ -100,10 +105,12 @@ class FrmSession(QMainWindow):
         self._btn_edit.setText(L.get("BtnModifier"))
         self._btn_del.setText(L.get("BtnEffacer"))
         self._btn_notes.setText(L.get("BtnFixerNotes"))
+        self._btn_notes_matiere.setText(L.get("BtnNoteParMatiere"))
         self._btn_choix.setText(L.get("BtnFixerChoix"))
         self._btn_param.setText(L.get("BtnParamConcours"))
         self._btn_import.setText(L.get("BtnImport"))
         self._btn_export.setText(L.get("BtnExport"))
+        self._btn_joindre.setText(L.get("BtnJoindre"))
         self._btn_lancer.setText(L.get("BtnLancerTraitement"))
         self._btn_visualiser.setText(L.get("BtnVisualiserResultats"))
         self._btn_quitter.setText(L.get("BtnQuitterSession"))
@@ -175,6 +182,10 @@ class FrmSession(QMainWindow):
         from app.views.frm_note_matiere import FrmNoteMatiere
         FrmNoteMatiere(cid, self).exec()
 
+    def _on_notes_par_matiere(self):
+        from app.views.frm_entrer_note_par_matiere import FrmEntrerNoteParMatiere
+        FrmEntrerNoteParMatiere(self).exec()
+
     def _on_choix(self):
         cid = self._get_selected_candidat_id()
         if not cid:
@@ -195,6 +206,10 @@ class FrmSession(QMainWindow):
     def _on_export(self):
         from app.views.frm_export_excel import FrmExportExcel
         FrmExportExcel(self).exec()
+
+    def _on_joindre(self):
+        from app.views.frm_joindre import FrmJoindre
+        FrmJoindre(self).exec()
 
     def _on_lancer(self):
         try:

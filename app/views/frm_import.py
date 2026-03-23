@@ -47,14 +47,21 @@ class FrmImport(QDialog):
             from app.services.excel_service import ExcelService
             from app.database.repositories.candidat_repo import CandidatRepository
             from app.database.repositories.etablissement_repo import EtablissementRepository
+            from app.database.repositories.filiere_repo import FiliereRepository
+            from app.database.repositories.choix_repo import ChoixRepository
             from app.models.candidat import Candidat
 
             rows = ExcelService.import_candidats(self._file_path)
-            # Build etab lookup by code
+
+            # Build lookup maps
             etabs = {e.etab_code: e.etab_id
                      for e in EtablissementRepository(use_session_db=True).get_all()}
+            filieres = {f.filiere_code: f.filiere_id
+                        for f in FiliereRepository(use_session_db=True).get_all()
+                        if f.filiere_code}
 
-            repo = CandidatRepository()
+            candidat_repo = CandidatRepository()
+            choix_repo = ChoixRepository()
             imported = 0
             skipped = 0
             for row in rows:
@@ -72,7 +79,18 @@ class FrmImport(QDialog):
                     langue=row.langue or "fr",
                     etab_id=etab_id
                 )
-                repo.add(c)
+                new_id = candidat_repo.add(c)
+
+                # Save filiere choices in priority order
+                if row.filiere_choices and new_id:
+                    filiere_ids = [
+                        filieres[fcode]
+                        for fcode, _ in row.filiere_choices
+                        if fcode in filieres
+                    ]
+                    if filiere_ids:
+                        choix_repo.save_choices(new_id, filiere_ids)
+
                 imported += 1
 
             QMessageBox.information(

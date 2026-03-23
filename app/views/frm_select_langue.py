@@ -1,5 +1,5 @@
 from pathlib import Path
-from PySide6.QtWidgets import QDialog, QHBoxLayout, QPushButton, QVBoxLayout, QLabel
+from PySide6.QtWidgets import QDialog, QHBoxLayout, QVBoxLayout, QLabel, QToolButton
 from PySide6.QtGui import QIcon, QPixmap
 from PySide6.QtCore import Qt
 
@@ -14,22 +14,29 @@ class FrmSelectLangue(QDialog):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("PhanBo-PFIEV")
-        self.setFixedSize(320, 130)
+        self.setFixedSize(320, 150)
         self._launcher = None
         self._setup_ui()
 
     def _setup_ui(self):
         layout = QVBoxLayout(self)
 
-        lbl = QLabel("Chọn ngôn ngữ:")
+        lbl = QLabel("Chọn ngôn ngữ / Choisir la langue :")
         lbl.setAlignment(Qt.AlignCenter)
         layout.addWidget(lbl)
 
         btn_layout = QHBoxLayout()
-        self._btn_fr = QPushButton("  Tiếng Pháp")
-        self._btn_vi = QPushButton("  Tiếng Việt")
-        self._btn_fr.setFixedHeight(50)
-        self._btn_vi.setFixedHeight(50)
+        btn_layout.setSpacing(20)
+
+        self._btn_fr = QToolButton()
+        self._btn_fr.setText("Tiếng Pháp")
+        self._btn_fr.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
+        self._btn_fr.setFixedSize(120, 80)
+
+        self._btn_vi = QToolButton()
+        self._btn_vi.setText("Tiếng Việt")
+        self._btn_vi.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
+        self._btn_vi.setFixedSize(120, 80)
 
         fr_pix = QPixmap(_res("french.gif"))
         vi_pix = QPixmap(_res("vietnam.gif"))
@@ -42,8 +49,10 @@ class FrmSelectLangue(QDialog):
 
         self._btn_fr.clicked.connect(lambda: self._select("fr"))
         self._btn_vi.clicked.connect(lambda: self._select("vi"))
+        btn_layout.addStretch()
         btn_layout.addWidget(self._btn_fr)
         btn_layout.addWidget(self._btn_vi)
+        btn_layout.addStretch()
         layout.addLayout(btn_layout)
 
     def _select(self, lang: str):

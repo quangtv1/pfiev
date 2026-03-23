@@ -144,5 +144,16 @@
   "ColLangue": "Langue",
   "ColEtablissement": "Etablissement",
   "ColNbInternes": "Nb Internes",
-  "ColNbExternes": "Nb Externes"
+  "ColNbExternes": "Nb Externes",
+  "TitleEntrerNoteParMatiere": "Saisir les notes par matière",
+  "TabNoteParMatiere": "Par matière",
+  "TabNoteParCandidat": "Par candidat",
+  "BtnNoteParMatiere": "Notes par matière",
+  "TitleJoindre": "Joindre des fichiers Excel",
+  "LblFichiersAJoindre": "Fichiers à joindre :",
+  "BtnEnlever": "Enlever",
+  "BtnRealiser": "Réaliser",
+  "BtnJoindre": "Joindre fichiers",
+  "MsgJoindreResult": "Fusion terminée : {0} fichier(s) traité(s).",
+  "MsgJoindreSave": "Enregistrer le fichier fusionné"
 }

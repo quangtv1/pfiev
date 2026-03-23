@@ -13,6 +13,18 @@ def _is_access_available() -> bool:
         return False
 
 
+def _is_sqlite_file(path: str) -> bool:
+    """Return True if file starts with the SQLite magic bytes (or is a new/empty file)."""
+    try:
+        with open(path, "rb") as f:
+            header = f.read(16)
+        if len(header) == 0:
+            return True  # new empty file created by sqlite3.connect — valid
+        return header[:15] == b"SQLite format 3"
+    except (OSError, IOError):
+        return False
+
+
 def _is_real_access_file(path: str) -> bool:
     """Check magic bytes to confirm file is a genuine Access .mdb/.accdb (not SQLite)."""
     try:
@@ -128,12 +140,16 @@ class DbConnection:
                 f"DRIVER={{{drv}}};DBQ={path};", autocommit=False
             )
         else:
+            # Validate file is SQLite before connecting (sqlite3.connect() succeeds
+            # on any file but the first execute() would fail for non-SQLite files)
+            if Path(path).exists() and not _is_sqlite_file(path):
+                raise ValueError(
+                    f"File is not a valid database: {Path(path).name}\n"
+                    f"Please select a .mdb or .db session file, not an Excel or other file."
+                )
             self._conn = sqlite3.connect(path, check_same_thread=False)
             self._conn.row_factory = sqlite3.Row
-            try:
-                self._conn.execute("PRAGMA foreign_keys = ON")
-            except Exception:
-                pass
+            self._conn.execute("PRAGMA foreign_keys = ON")
 
     def execute(self, sql: str, params=()):
         if self._use_access:

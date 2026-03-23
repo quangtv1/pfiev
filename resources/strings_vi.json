@@ -144,5 +144,16 @@
   "ColLangue": "Ngôn ngữ",
   "ColEtablissement": "Trường",
   "ColNbInternes": "Số nội sinh",
-  "ColNbExternes": "Số ngoại sinh"
+  "ColNbExternes": "Số ngoại sinh",
+  "TitleEntrerNoteParMatiere": "Nhập điểm theo môn thi",
+  "TabNoteParMatiere": "Theo môn thi",
+  "TabNoteParCandidat": "Theo thí sinh",
+  "BtnNoteParMatiere": "Nhập điểm theo môn",
+  "TitleJoindre": "Gộp file Excel",
+  "LblFichiersAJoindre": "Danh sách file cần gộp:",
+  "BtnEnlever": "Bỏ",
+  "BtnRealiser": "Thực hiện",
+  "BtnJoindre": "Gộp file Excel",
+  "MsgJoindreResult": "Đã gộp xong: {0} file.",
+  "MsgJoindreSave": "Lưu file đã gộp"
 }
