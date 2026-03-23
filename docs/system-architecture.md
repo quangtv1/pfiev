@@ -1,4 +1,4 @@
-# System Architecture - OrientationPFIEV-Python
+# System Architecture - PhanBo-PFIEV
 
 **Version:** v0.1.3 | **Target:** Windows Desktop | **Last Updated:** 2026-03-23
 
@@ -9,7 +9,7 @@
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    Windows Desktop App                       │
-│                   OrientationPFIEV.exe                       │
+│                   PhanBo-PFIEV.exe                       │
 └──────────────────────────┬──────────────────────────────────┘
                            │
             ┌──────────────┼──────────────┐
@@ -506,10 +506,10 @@ Create databases
 └─ python scripts/create_dbs.py
         ↓
 Build .exe
-└─ pyinstaller OrientationPFIEV.spec
+└─ pyinstaller PhanBo-PFIEV.spec
         ↓
 Package ZIP
-└─ Compress-Archive dist/OrientationPFIEV
+└─ Compress-Archive dist/PhanBo-PFIEV
         ↓
 Create GitHub Release
 └─ Upload .zip artifact
@@ -519,11 +519,11 @@ Notify users (Release notes)
 
 ### User Distribution
 ```
-User downloads OrientationPFIEV-Python-win-x64.zip
+User downloads PhanBo-PFIEV-win-x64.zip
         ↓
-Extract to C:\Program Files\OrientationPFIEV
+Extract to C:\Program Files\PhanBo-PFIEV
         ↓
-Run OrientationPFIEV.exe
+Run PhanBo-PFIEV.exe
         ├─ Auto-creates data/ folder
         ├─ Auto-creates config.db
         ├─ Auto-creates template.mdb

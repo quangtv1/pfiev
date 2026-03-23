@@ -1,8 +1,8 @@
-# OrientationPFIEV-Python Documentation
+# PhanBo-PFIEV Documentation
 
 **Version:** v0.1.3 | **Last Updated:** 2026-03-23
 
-Welcome to the complete documentation for OrientationPFIEV-Python. This folder contains everything you need to understand, deploy, and develop the application.
+Welcome to the complete documentation for PhanBo-PFIEV. This folder contains everything you need to understand, deploy, and develop the application.
 
 ---
 
@@ -44,7 +44,7 @@ Welcome to the complete documentation for OrientationPFIEV-Python. This folder c
 
 ## Quick Facts
 
-**Application:** OrientationPFIEV (Student Allocation System)
+**Application:** PhanBo-PFIEV (Student Allocation System)
 
 **Tech Stack:**
 - Language: Python 3.12
@@ -76,10 +76,10 @@ Welcome to the complete documentation for OrientationPFIEV-Python. This folder c
 # https://github.com/quangtv1/pfiev/releases
 
 # 2. Extract the ZIP file
-# C:\Program Files\OrientationPFIEV
+# C:\Program Files\PhanBo-PFIEV
 
 # 3. Run the app
-# Double-click OrientationPFIEV.exe
+# Double-click PhanBo-PFIEV.exe
 ```
 
 See [Deployment Guide](./deployment-guide.md) for detailed instructions.
@@ -89,7 +89,7 @@ See [Deployment Guide](./deployment-guide.md) for detailed instructions.
 ```bash
 # 1. Clone repository
 git clone https://github.com/quangtv1/pfiev.git
-cd OrientationPFIEV-Python
+cd PhanBo-PFIEV
 
 # 2. Create virtual environment
 python -m venv venv
@@ -196,9 +196,9 @@ pip install pyinstaller
 python scripts/create_dbs.py
 
 # Build
-pyinstaller OrientationPFIEV.spec
+pyinstaller PhanBo-PFIEV.spec
 
-# Output: dist/OrientationPFIEV/OrientationPFIEV.exe
+# Output: dist/PhanBo-PFIEV/PhanBo-PFIEV.exe
 ```
 
 See [Deployment Guide - Building from Source](./deployment-guide.md#building-from-source).
@@ -366,7 +366,7 @@ This documentation follows these principles:
 
 ## License & Credits
 
-**OrientationPFIEV-Python**
+**PhanBo-PFIEV**
 - Original concept: VB6 + C# version
 - Python 3.12 + PySide6 rewrite
 - Open source (license: TBD)

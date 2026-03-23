@@ -1,10 +1,10 @@
-# Codebase Summary - OrientationPFIEV-Python
+# Codebase Summary - PhanBo-PFIEV
 
 **Version:** v0.1.3 | **Language:** Python 3.12 + PySide6 (Qt6) | **Last Updated:** 2026-03-23
 
 ## Project Overview
 
-OrientationPFIEV là ứng dụng desktop (Windows) hỗ trợ quản lý và phân bổ học sinh vào các ngành học dựa trên:
+PhanBo-PFIEV là ứng dụng desktop (Windows) hỗ trợ quản lý và phân bổ học sinh vào các ngành học dựa trên:
 - Kết quả thi cử + điểm trung bình
 - Sự lựa chọn của học sinh
 - Số lượng chỗ trống của mỗi ngành
@@ -17,10 +17,10 @@ Hỗ trợ đa ngôn ngữ: **Tiếng Việt + Tiếng Pháp**
 ## Cấu Trúc Project
 
 ```
-OrientationPFIEV-Python/
+PhanBo-PFIEV/
 ├── main.py                          # Entry point
 ├── requirements.txt                 # Dependencies
-├── OrientationPFIEV.spec           # PyInstaller config
+├── PhanBo-PFIEV.spec           # PyInstaller config
 │
 ├── app/
 │   ├── __init__.py
@@ -212,7 +212,7 @@ etab_filiere: str                 # School/program name
 | pyodbc | Legacy Access .mdb support (optional) |
 
 **Build Tool:**
-- PyInstaller → dist/OrientationPFIEV/ (Windows .exe)
+- PyInstaller → dist/PhanBo-PFIEV/ (Windows .exe)
 
 ---
 
@@ -260,14 +260,14 @@ etab_filiere: str                 # School/program name
 2. Setup Python 3.12
 3. Install dependencies (requirements.txt + pyinstaller + pyodbc)
 4. Create databases (scripts/create_dbs.py)
-5. Build .exe (pyinstaller OrientationPFIEV.spec)
+5. Build .exe (pyinstaller PhanBo-PFIEV.spec)
 6. Package into ZIP
 7. Create GitHub Release with .zip artifact
 
 **User Deployment:**
-1. Download OrientationPFIEV-Python-win-x64.zip
+1. Download PhanBo-PFIEV-win-x64.zip
 2. Extract to desired location
-3. Run OrientationPFIEV.exe (no Python installation needed)
+3. Run PhanBo-PFIEV.exe (no Python installation needed)
 
 ---
 

@@ -1,4 +1,4 @@
-# Deployment Guide - OrientationPFIEV-Python
+# Deployment Guide - PhanBo-PFIEV
 
 **Version:** v0.1.3 | **Target:** Windows 10+ | **Last Updated:** 2026-03-23
 
@@ -10,15 +10,15 @@
 
 1. **Download**
    - Go to: https://github.com/quangtv1/pfiev/releases
-   - Download `OrientationPFIEV-Python-win-x64.zip` (latest version)
+   - Download `PhanBo-PFIEV-win-x64.zip` (latest version)
 
 2. **Extract**
    - Right-click → Extract All
-   - Unzip to: `C:\Program Files\OrientationPFIEV` (recommended)
+   - Unzip to: `C:\Program Files\PhanBo-PFIEV` (recommended)
    - Or any location (Desktop, Documents, etc.)
 
 3. **Run**
-   - Double-click `OrientationPFIEV.exe`
+   - Double-click `PhanBo-PFIEV.exe`
    - Select language (Tiếng Việt / Français)
    - Create or open a session
    - Start using!
@@ -31,9 +31,9 @@
 
 ### Troubleshooting
 
-**"OrientationPFIEV.exe not found"**
+**"PhanBo-PFIEV.exe not found"**
 - Ensure you extracted the entire folder, not just the .exe
-- Check that `dist/OrientationPFIEV/` folder is complete
+- Check that `dist/PhanBo-PFIEV/` folder is complete
 
 **"VCRUNTIME140.dll missing"**
 - Download Visual C++ Redistributable from Microsoft
@@ -45,7 +45,7 @@
 - Install ODBC driver: https://www.microsoft.com/en-us/download/details.aspx?id=13255
 
 **App crashes on startup**
-- Check for antivirus blocking (whitelist OrientationPFIEV.exe)
+- Check for antivirus blocking (whitelist PhanBo-PFIEV.exe)
 - Verify write permissions in installation folder
 - Check `data/` folder exists and is writable
 
@@ -64,7 +64,7 @@
 ```bash
 # Clone repository
 git clone https://github.com/quangtv1/pfiev.git
-cd OrientationPFIEV-Python
+cd PhanBo-PFIEV
 
 # Create virtual environment
 python -m venv venv
@@ -117,29 +117,29 @@ This creates:
 ### Step 3: Build .exe with PyInstaller
 
 ```bash
-pyinstaller OrientationPFIEV.spec
+pyinstaller PhanBo-PFIEV.spec
 ```
 
-**Output:** `dist/OrientationPFIEV/OrientationPFIEV.exe`
+**Output:** `dist/PhanBo-PFIEV/PhanBo-PFIEV.exe`
 
 ### Step 4: Test Executable
 
 ```bash
 # Run the built .exe
-dist/OrientationPFIEV/OrientationPFIEV.exe
+dist/PhanBo-PFIEV/PhanBo-PFIEV.exe
 ```
 
 ### Step 5: Package for Distribution
 
 ```bash
 # Windows PowerShell
-Compress-Archive -Path dist/OrientationPFIEV -DestinationPath OrientationPFIEV-Python-win-x64.zip
+Compress-Archive -Path dist/PhanBo-PFIEV -DestinationPath PhanBo-PFIEV-win-x64.zip
 
 # macOS/Linux
-zip -r OrientationPFIEV-Python-win-x64.zip dist/OrientationPFIEV/
+zip -r PhanBo-PFIEV-win-x64.zip dist/PhanBo-PFIEV/
 ```
 
-### Build Configuration (OrientationPFIEV.spec)
+### Build Configuration (PhanBo-PFIEV.spec)
 
 **Key settings:**
 ```python
@@ -196,9 +196,9 @@ icon='resources/iconPFEIV.ico'
 4. Create databases
    - python scripts/create_dbs.py
 5. Build .exe
-   - pyinstaller OrientationPFIEV.spec
+   - pyinstaller PhanBo-PFIEV.spec
 6. Package ZIP
-   - Compress-Archive dist/OrientationPFIEV
+   - Compress-Archive dist/PhanBo-PFIEV
 7. Upload artifact
    - Save for 30 days
 8. Create GitHub Release
@@ -404,8 +404,8 @@ pip install pyinstaller pyinstaller-hooks-contrib
 **Fix:**
 ```bash
 # Verify dist/ structure
-dist/OrientationPFIEV/
-├── OrientationPFIEV.exe
+dist/PhanBo-PFIEV/
+├── PhanBo-PFIEV.exe
 ├── resources/
 │   ├── strings_vi.json
 │   ├── strings_fr.json
@@ -420,7 +420,7 @@ dist/OrientationPFIEV/
 
 - Hidden import missing in `.spec`
 - Add to `hiddenimports` list
-- Rebuild with `pyinstaller OrientationPFIEV.spec`
+- Rebuild with `pyinstaller PhanBo-PFIEV.spec`
 
 ---
 
@@ -504,7 +504,7 @@ If needed (v0.4+), use:
 ```python
 # Log to user's home directory
 import logging
-log_path = Path.home() / ".OrientationPFIEV" / "app.log"
+log_path = Path.home() / ".PhanBo-PFIEV" / "app.log"
 logging.basicConfig(filename=log_path, level=logging.ERROR)
 ```
 

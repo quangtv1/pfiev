@@ -1,4 +1,4 @@
-# Project Roadmap - OrientationPFIEV-Python
+# Project Roadmap - PhanBo-PFIEV
 
 **Current Status:** v0.1.3 (Stable) | **Last Updated:** 2026-03-23 | **Maintainer:** TBD
 

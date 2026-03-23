@@ -1,4 +1,4 @@
-# Code Standards & Conventions - OrientationPFIEV-Python
+# Code Standards & Conventions - PhanBo-PFIEV
 
 **Version:** v0.1.3 | **Last Updated:** 2026-03-23
 

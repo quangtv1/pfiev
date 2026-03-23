@@ -1,4 +1,4 @@
-# Project Overview & PDR - OrientationPFIEV-Python
+# Project Overview & PDR - PhanBo-PFIEV
 
 **Current Version:** v0.1.3 | **Status:** Active Development | **Last Updated:** 2026-03-23
 
