@@ -1,4 +1,6 @@
 import sys
+import matplotlib
+matplotlib.use('QtAgg')  # set backend before any other matplotlib import
 from pathlib import Path
 from PySide6.QtWidgets import QApplication
 from app.state import AppState
