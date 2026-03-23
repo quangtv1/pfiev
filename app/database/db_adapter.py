@@ -13,6 +13,23 @@ def _is_access_available() -> bool:
         return False
 
 
+def _is_real_access_file(path: str) -> bool:
+    """Check magic bytes to confirm file is a genuine Access .mdb/.accdb (not SQLite)."""
+    try:
+        with open(path, "rb") as f:
+            header = f.read(16)
+        # SQLite magic: starts with b'SQLite format 3'
+        if header[:15] == b"SQLite format 3":
+            return False
+        # Access JET magic: bytes 4-19 = b'Standard Jet DB' or b'Standard ACE DB'
+        if header[4:15] in (b"Standard Je", b"Standard AC"):
+            return True
+        # Unknown format — treat as SQLite to be safe
+        return False
+    except (OSError, IOError):
+        return False
+
+
 def _access_driver() -> str:
     import pyodbc
     for d in pyodbc.drivers():
@@ -98,7 +115,12 @@ class DbConnection:
     def __init__(self, path: str, force_sqlite: bool = False):
         self._path = path
         ext = Path(path).suffix.lower()
-        self._use_access = (not force_sqlite) and (ext == ".mdb") and _is_access_available()
+        self._use_access = (
+            (not force_sqlite)
+            and (ext == ".mdb")
+            and _is_access_available()
+            and _is_real_access_file(path)
+        )
         if self._use_access:
             import pyodbc
             drv = _access_driver()
